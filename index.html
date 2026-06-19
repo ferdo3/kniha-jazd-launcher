@@ -159,7 +159,11 @@
         var t = (document.getElementById('tokInput').value || '').trim();
         if (!t) return;
         try { localStorage.setItem(LS_KEY, t); } catch(e){}
-        location.replace(withTok(t));
+        TOKEN = t;
+        // Standalone: NEnaviguj na script.google.com (iOS by vykoplo PWA do Safari) —
+        // načítaj appku do iframe a zostaň na github.io = fullscreen. Browser: otvor priamo.
+        if (isStandalone()) { enterApp(); }
+        else { location.replace(withTok(t)); }
       });
     }
   </script>
