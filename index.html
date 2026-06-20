@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-title" content="Kniha jázd">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#185FA5">
 <!-- PWA manifest (Android „Inštalovať aplikáciu" + iOS Pridať na plochu). start_url bez tokenu je OK —
      token sa drží v localStorage (uloží sa pri prvom otvorení s ?token=…), takže standalone spustenie
@@ -45,7 +45,7 @@
      appka sa renderuje vo fullscreen iframe. iframe = 100%×100%, appka rieši safe-area sama. */
   /* safe-area padding → appka (iframe) sa nedostane pod status bar / home indicator.
      env() je samonastavovacie (0 keď netreba), bg = farba appky nech strip splynie. */
-  #appwrap{position:fixed;inset:0;z-index:1000;display:none;background:#185FA5;overflow:hidden;
+  #appwrap{position:fixed;inset:0;z-index:1000;display:none;background:#f4f5f7;overflow:hidden;
     padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);box-sizing:border-box}
   #appframe{display:block;border:0;background:#fff;width:100%;height:100%}
   /* SPLASH — auto-ikona + animácia, spinner pod ňou */
