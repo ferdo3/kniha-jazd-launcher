@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kniha jázd</title>
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=1">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1">
-<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png?v=1">
-<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png?v=1">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=1">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=1">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=2">
 <meta name="apple-mobile-web-app-title" content="Kniha jázd">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -49,20 +49,17 @@
     padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);box-sizing:border-box}
   #appframe{display:block;border:0;background:#fff;width:100%;height:100%}
   /* SPLASH — auto-ikona + animácia, spinner pod ňou */
-  #splash{position:absolute;inset:0;z-index:1;
-    background:radial-gradient(120% 95% at 50% 40%, #2E7BC4 0%, #185FA5 52%, #0c2f52 100%);
-    color:#fff;transition:opacity .3s;pointer-events:none;overflow:hidden}
+  #splash{position:fixed;inset:0;z-index:1;
+    background:radial-gradient(130% 100% at 50% 38%, #2E7BC4 0%, #185FA5 52%, #0c2f52 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:#fff;transition:opacity .3s;pointer-events:none}
   #splash.hide{opacity:0}
-  #splash .slogo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:min(42vw,150px);height:auto;border-radius:24px;box-shadow:0 12px 30px rgba(0,0,0,.35);z-index:2;
-    animation:pop .5s ease-out, breathe 3s ease-in-out .5s infinite}
-  @keyframes pop{from{opacity:0;transform:translate(-50%,-50%) scale(.86)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
-  @keyframes breathe{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.035)}}
+  #splash .scar{width:min(48vw,180px);aspect-ratio:1;height:auto;animation:fadein .45s ease-out}
+  #splash .stitle{margin-top:16px;color:rgba(255,255,255,.92);font-size:13px;font-weight:700;letter-spacing:3px}
+  @keyframes fadein{from{opacity:0}to{opacity:1}}
   .spin{width:30px;height:30px;border:3px solid rgba(255,255,255,.3);border-top-color:#fff;
-    border-radius:50%;position:absolute;top:72%;left:50%;margin:-15px 0 0 -15px;z-index:2;animation:sp .8s linear infinite}
+    border-radius:50%;margin-top:34px;animation:sp .8s linear infinite}
   @keyframes sp{to{transform:rotate(360deg)}}
-  #splash .sfoot{position:absolute;bottom:46px;left:0;right:0;z-index:2;text-align:center;
-    color:rgba(255,255,255,.6);font-size:11px;font-weight:700;letter-spacing:2.5px}
   html.embed,body.embed{overflow:hidden}
 </style>
 <script>
@@ -126,15 +123,15 @@
   <!-- Standalone + token: fullscreen iframe shell (skrytý kým JS nezistí standalone) -->
   <div id="appwrap">
     <div id="splash">
-      <img class="slogo" src="icon-512.png?v=1" alt="Kniha jázd">
+      <img class="scar" src="car-glyph.png?v=2" alt="">
+      <div class="stitle">KNIHA&nbsp;&nbsp;JÁZD</div>
       <div class="spin"></div>
-      <div class="sfoot">KNIHA&nbsp;&nbsp;JÁZD</div>
     </div>
     <iframe id="appframe" title="Kniha jázd" allow="clipboard-write"></iframe>
   </div>
 
   <!-- Bežné Safari / standalone bez tokenu: landing page -->
-  <img class="logo" src="icon-512.png?v=1" alt="Kniha jázd">
+  <img class="logo" src="icon-512.png?v=2" alt="Kniha jázd">
   <h1 class="title">Kniha jázd</h1>
   <p class="sub">Firemné jazdy · import · výkaz</p>
 
